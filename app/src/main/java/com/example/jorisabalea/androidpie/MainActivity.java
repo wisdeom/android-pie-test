@@ -29,12 +29,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         image = findViewById(R.id.image);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
                 try {
                     decodeImage();
                 } catch (IOException e) {
@@ -48,9 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void decodeImage() throws IOException {
         Drawable decodedAnimation = ImageDecoder.decodeDrawable(
-                ImageDecoder.createSource(getResources(), R.drawable.tap));
+                ImageDecoder.createSource(getResources(), R.drawable.pie));
         if (decodedAnimation instanceof AnimatedImageDrawable) {
-            // Prior to start(), the first frame is displayed.
             ((AnimatedImageDrawable) decodedAnimation).start();
         }
         image.setImageDrawable(decodedAnimation);
