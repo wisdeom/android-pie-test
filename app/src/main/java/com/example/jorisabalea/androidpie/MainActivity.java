@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        // UI elements
+        
+        
         Toolbar toolbar = findViewById(R.id.toolbar);
         image = findViewById(R.id.image);
         setSupportActionBar(toolbar);
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }    
-        
+        /*
         //Initialize SDK
         if (!BuildConfig.APPCENTER_APP_SECRET.equals("")) {
             // Use APPCENTER_APP_SECRET environment variable if it exists
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             // Otherwise use the hardcoded string value here
             AppCenter.start(getApplication(), "5448823f-4467-47f2-8842-c347fc6c930e",
                     Analytics.class, Crashes.class, Distribute.class);
-        } 
+        } */
 
         if (BuildConfig.DEBUG) {
             AppCenter.setLogLevel(Log.VERBOSE);
