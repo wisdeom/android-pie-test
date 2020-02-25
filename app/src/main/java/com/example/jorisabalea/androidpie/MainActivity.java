@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         
-        AppCenter.start(getApplication(), "{5448823f-4467-47f2-8842-c347fc6c930e}", Analytics.class, Crashes.class);
-        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -42,12 +40,12 @@ public class MainActivity extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
-            }
+            }    
             
-        });
+        AppCenter.start(getApplication(), "{5448823f-4467-47f2-8842-c347fc6c930e}", Analytics.class, Crashes.class);
+        }); //onCreate
 
-    }
+    } //MainActivity
 
     private void decodeImage() throws IOException {
         Drawable decodedAnimation = ImageDecoder.decodeDrawable(
