@@ -24,12 +24,16 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        
+        AppCenter.start(getApplication(), "{5448823f-4467-47f2-8842-c347fc6c930e}", Analytics.class, Crashes.class);
+        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         image = findViewById(R.id.image);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
+        
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             }
+            
         });
 
     }
